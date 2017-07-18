@@ -19,22 +19,36 @@ class YouTubeDebugger extends React.Component{
   }
 
   bitrateClick = () => {
+    // this.setState({
+    //   settings: Object.assign({}, this.state.settings, {
+    //     bitrate: 12,
+    //   }),
+    // });
     this.setState({
-      settings: Object.assign({}, this.state.settings, {
-        bitrate: 12,
-      }),
-    });
+      settings: {
+        ...this.state.settings,
+        bitrate: 12
+      }
+    })
   }
 
   resolutionClick = () => {
+    // this.setState({
+    //   settings: Object.assign({}, this.state.settings, {
+    //     video: Object.assign({}, this.state.settings.video, {
+    //       resolution: '720p'
+    //     })
+    //   }),
+    // });
+    // console.log(this.state.settings.video)
     this.setState({
-      settings: Object.assign({}, this.state.settings, {
-        video: Object.assign({}, this.state.settings.video, {
+      settings:{
+        ...this.state.settings,
+        video: {
           resolution: '720p'
-        })
-      }),
-    });
-    console.log(this.state.settings.video)
+        }
+      }
+    })
   }
 
 
@@ -45,7 +59,7 @@ class YouTubeDebugger extends React.Component{
           className="bitrate"
            onClick={this.bitrateClick}>bitrate</button>
         <button
-          className="resolution"  
+          className="resolution"
            onClick={this.resolutionClick}>resolution</button>
       </div>
 
